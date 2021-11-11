@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="info"></h1>
+    <h1>Enter below the amount money you have</h1>
+    <div class="items">
+        <input type="number" name="" id="inputNumber" placeholder="Enter your amount">
+        <button id="ternaryButton">Enter</button>
+      </div>
+    <h1 id="ternary">Ternary Operator</h1>
+</body>
+</html>
+
+<script>
+    // let userName = prompt('Kullanıcı adınız: ');
+    // let age = prompt('Yaşınız: ')
+    // let info = document.querySelector('#info');
+
+    // if(userName && age >= 18){
+    //     info.innerHTML ='Ehliyet alabilirsiniz.'
+    // } else if (!userName){
+    //     info.innerHTML ='Kullanıcı adınız yok.'
+    // } else if (!(age >= 18)) {
+    //     info.innerHTML ='Yaş bilginiz yok ve ya 18 yaşından küçüksünüz.'
+    // } 
+
+    // let inputNumber  = document.querySelector('#inputNumber');
+    // let button  = document.querySelector('#ternaryButton');
+    // button.addEventListener("click", function() {
+    //     money = inputNumber;
+    //     console.log(money)
+
+    // });
+
+     let money = 40;
+
+    const canBuy = money < 17 ? 'You can not buy':
+                   money > 30 ? 'Yes, you can buy':
+                   "Increase the amount of money";
+    document.querySelector('#ternary').innerHTML = canBuy;
+
+
+
+    // var money;
+    // var canBuy = 
+    //     (money < 17) ? "Satın alamazsın..":
+    //     (money > 30) ? "Satın alabilirsin..":
+    //     "Para miktarını girmen gerekmektedir..";
+
+    // console.log(canBuy) 
+
+
+
+
+</script>

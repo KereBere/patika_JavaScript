@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="greeting">Kodluyoruz</h1>
+    <h1 id="fname">Kodluyoruz</h1>
+    <form action="#" id="seleckColor">
+        <select name="colors" id="select">
+            <option value="red">RED</option>
+            <option value="blue">BLUE</option>
+            <option value="purple">PURPLE</option>
+            <option value="orange">ORANGE</option>
+            <option value="pink">PINK</option>
+    </select>
+    <br><br>
+    <input type="submit">
+    </form>
+    
+</body>
+</html>
+<script>
+
+    let greeting = document.querySelector('#greeting')
+    greeting.addEventListener("click", domClick);
+    greeting.addEventListener("mouseover", domOver);
+
+    function domClick() {
+        console.log(this.innerHTML = 'Bilgi Değiştirildi.')
+        console.log(this.style.color === "purple" ?this.style.color = "red" :this.style.color = "purple")
+    }
+
+
+    function domOver() {
+        console.log(this.style.color === "purple" ?this.style.color = "red" :this.style.color = "purple")
+    }
+
+        //id=fname olan nesne çağrılarak keyboard değişkenine atandı
+    const keyboard =document.querySelector('#fname');
+    //keyboard isimli değişkene "cut" etkinliği atandı ve fonksiyon ismi parametre olarak atandı
+    keyboard.addEventListener("cut",cuttingFunction);
+    //cuttingFunction isimli fonksiyon ile form inputuna yazılan girdileri klavye ctrl+c ile kesildiğinde etkinlik çalışmaktadır
+    function cuttingFunction(event){
+    console.log("etkinlik tipi: " , event.type)
+    } 
+
+
+    //https://www.w3schools.com/jsref/dom_obj_event.asp DOM events
+
+
+    const color = document.querySelector('#select');
+    
+    color.addEventListener('change', selectBox);
+
+     function selectBox(event) {
+        console.log(`Etkinlik tipi: ${event.type}`);
+        console.log(`Değer: ${event.target.value}`);
+    }
+
+
+
+
+
+
+
+</script>

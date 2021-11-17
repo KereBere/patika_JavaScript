@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+
+</html>
+
+<script>
+    let laptop1 = {
+        brand: "Apple",
+        model: "MacBook Pro",
+        "2kg": 2,
+        modelName: "MacFag",
+        model_name: "MacBook Pro"
+        // model name: "MacBook Pro" Yanlış kullanım
+        // model-name: "MacBook Pro"
+    }
+    console.log(laptop1)
+    console.log(laptop1.brand)
+    console.log(laptop1.model)
+    console.log(laptop1["2kg"])
+    console.log(laptop1["model"])
+
+    laptop1.brand = "HP Omen";
+    console.log(laptop1.brand)
+    laptop1["brand"] = "Monster";
+    console.log(laptop1.brand)
+
+    laptop1.version = "10.85"
+    console.log(laptop1.version)
+
+    keys = Object.keys(laptop1);
+    console.log(keys)
+
+    keys.forEach(key => {
+        console.log(key)
+        console.log(laptop1[key])
+    });
+
+    console.log(
+        Object.values(laptop1)
+    )
+
+    const values = Object.values(laptop1);
+
+    values.forEach((value, i) => {
+        console.log("value: ", i, " ", value)
+    });
+
+
+    console.log("Brand haven't deleted: ", laptop1.brand)
+
+    delete laptop1.brand;
+
+    console.log("Brand deleted: ", laptop1.brand)
+
+
+    //const veri = require("./dosyanizin/dizini/veri.json")  Turns it into an object. 
+
+    const entries = Object.entries(laptop1) //– [key, value] çiftlerinden oluşan bir array döner. 
+    console.log(entries)
+
+    let person = {
+        name: "Jack",
+        age: 20
+    };
+
+    document.getElementById("demo").innerHTML = JSON.stringify(person); // Bu objenizi bir stringe çevirip demo idsine basacaktır.
+
+    let stringObject = JSON.stringify(person);
+
+    let newPerson = JSON.parse(stringObject);
+    // parse methodu da stringtify methodunun tersi olarak çalışır ve stringi objeye çevirir
+</script>

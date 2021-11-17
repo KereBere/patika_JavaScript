@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let user = {
+        firstName: "Bilgin",
+        lastName: "Uzman",
+        score: [1, 2, 3, 4],
+        isActive: true,
+        shortName: function () {
+            return `${this.firstName[0].toUpperCase()}. ${this.lastName}`
+        },
+        longName: () => {
+            return `My name is ${user.firstName} ${user.lastName}.`;
+        },
+    }
+
+    console.log(user.shortName())
+    console.log(user.longName())
+
+    //Adding a new function to our object
+    user.showScore = function () {
+        this.score.forEach((element, i) => {
+            console.log(`The score is ${this.score[i]}`);
+        });
+    }
+
+    user.showScore();
+
+    // Fonksiyon adını yazdırmak "fonksiyonAdi"
+    const fonksiyonAdi = () => { console.log("Merhaba Kodluyoruz") }
+    console.log(fonksiyonAdi.name);
+
+
+    //Object constructor
+    function Insan(isim, yas) {
+        this.isim = isim;
+        this.yas = yas;
+    }
+
+    const ali = new Insan("Ali", 29);
+    console.log(ali)
+
+    ali.yeniOzellik = "Sonradan eklenen özellik";
+    console.log(ali.yeniOzellik);
+
+    // Sınıfa prototype yardımıyla fonksiyon eklemek
+    Insan.prototype.yeniFonksiyon = () => { console.log("Merhaba Kodluyoruz") }
+    const ayse = new Insan("ayşe", 22);
+    ayse.yeniFonksiyon();
+    // Output : "Merhaba Kodluyoruz"
+
+    ayse.__proto__.enYeniFonksiyon = () => { console.log("Tekrar Merhaba Kodluyoruz!") }
+    ayse.enYeniFonksiyon();
+    // Output : "Tekrar Merhaba Kodluyoruz!"
+
+    console.log(ayse)
+
+
+</script>

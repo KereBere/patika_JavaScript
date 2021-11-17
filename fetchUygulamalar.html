@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="userList">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    const userList = document.querySelector('#userList');
+    const url = "https://jsonplaceholder.typicode.com/users";
+
+    fetch(url).then((response) => response.json())
+        .then((json) => {
+            json.forEach(user => {
+                const liDOM = document.createElement('li');
+                liDOM.innerText = user.address.zipcode
+                userList.append(liDOM);
+            });
+        });
+
+
+
+    for (var i = 0; i < 3; i++) {
+        setTimeout(function () { alert(i); }, 1000 + i);
+    }
+
+
+    (function () {
+        var a = b = 5;
+    })();
+
+    console.log(b)
+</script>

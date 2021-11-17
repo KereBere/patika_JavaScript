@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Kodluyoruz FrontEnd 101</h1>
+    <ul id="userList">
+
+    </ul>
+</body>
+
+</html>
+
+
+<script>
+    let users = ['Ali', 'İsmail', 'İlyas'];
+    const userListDOM = document.querySelector('#userList');
+
+    for (let i = 0; i < users.length; i++) {
+        const liDOM = document.createElement('li');
+        liDOM.innerHTML = users[i];
+        userListDOM.append(liDOM);
+    }
+
+    let str = 'javascriptloops';
+
+    function vowelsAndConsonants(s) {
+        let vowels = [];
+        let consonants = [];
+        for (let i = 0; i < s.length; i++) {
+            if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u') {
+                vowels.push(s[i])
+            } else {
+                consonants.push(s[i])
+            }
+        }
+        let newArr = vowels.concat(consonants).join('');
+        for (let index = 0; index < newArr.length; index++) {
+            console.log(newArr[index])
+
+        }
+    }
+
+    let loremString = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, voluptatibus?';
+    const Lorem_IPSUM = loremString.split(' ');
+
+
+    let index = 0;
+
+    for (; index < Lorem_IPSUM.length; index++) {
+        if (Lorem_IPSUM[index] == 'dolor') continue;
+        const liDOM = document.createElement('li');
+        liDOM.innerHTML = Lorem_IPSUM[index]
+        userListDOM.append(liDOM);
+        if (Lorem_IPSUM[index] == 'elit.') break;
+    }
+</script>

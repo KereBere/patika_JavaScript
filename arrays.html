@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<script>
+    const sayilar = [10, 20, 30, 'string item',];
+
+    // Dizi içindeki sayıları toplayarak indirgeyecek bir fonksiyon yazalım:
+    function indirgeyici(akumulator, sayi) {
+        return akumulator + sayi;
+    }
+    // Bu fonksiyonu ve toplamaya 0'dan başlayacağımızı belirten 0 sayısını metodumuza parametre olarak girelim ve sonucu bir değişkende tutalım:
+    const sonuc1 = sayilar.reduce(function (a, b) {
+        console.log(`${a} + ${b}`)
+
+        return a + b;
+    }, 0);
+    console.log(sonuc1);
+    //0 + 10 + 20 + 30 = 60 olacağından çıktı olarak 60 bekleriz.
+    // Eğer akümülatorümüzü 0 yerine 5'den başlatsaydık çıkabilecek sonucu görelim:
+    const sonuc2 = sayilar.reduce(indirgeyici, 5);
+    console.log(sonuc2);
+
+
+    const piknikSepetim = [
+        ['Elma', 3],
+        ['Muz', 5],
+        ['Ekmek', 2]
+    ];
+    console.log(piknikSepetim[0][0])
+
+    let kalemlik = new Array();
+
+    kalemlik[0] = new Array('Kalem', 3, 'Kurşun');
+    kalemlik[1] = new Array('Silgi', 5, 'Mavi');
+    kalemlik[2] = new Array('Açacak', 9, 'Metal');
+
+    console.log(kalemlik[0][1]);
+
+    let dizi = [2, 5, 8, 11, 15, 17];
+    let yeniDizi = dizi.filter(item => item > 10);
+    let carpimDizi = yeniDizi.map(item => item * 5);
+    console.log(carpimDizi)
+
+    let dizi_2 = [3, 6, 9, 14, 16];
+    function checkArray(arr) {
+        if (arr.some(item => item > 5)) {
+            return "Beşten büyük bir eleman mevcut."
+        } else {
+            return "5'ten büyük eleman mevcut değil.";
+        }
+    }
+    console.log(checkArray(dizi_2));
+
+    let dizi_3 = [2, 3, 4];
+
+    function carpArray(arr) {
+        return arr.reduce(function (a, b) {
+            console.log(`${a} + ${b}`)
+            return a * b;
+        }, 1);
+    }
+    console.log(carpArray(dizi_3));
+
+    let nums = [2, 3, 6, 6, 5];
+
+    function getSecondLargest(nums) {
+        nums.sort((a, b) => a - b);
+        let tempArr = nums.filter((c, i) => {
+            return nums.indexOf(c) === i;
+        });
+        return tempArr[tempArr.length - 2];
+    }
+
+    console.log(getSecondLargest(nums));
+</script>

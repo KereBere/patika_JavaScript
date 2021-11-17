@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <button id="delete">Delete All Stored Data</button>
 </head>
 <body>
     
@@ -18,15 +19,16 @@
     let userStatus = {userName: 'kodluyoruz', isActive: true}
     localStorage.setItem('user', JSON.stringify(userStatus))
     localStorage.setItem('userr', userStatus)
+ 
+
+    const user = localStorage.getItem('user')
+    const parsedUser = JSON.parse(user);
+
+    const parsedInOneLine = JSON.parse(localStorage.getItem('user'));
+    console.log(parsedUser.userName)
+    console.log(parsedInOneLine.isActive)
 
 
-    const getUser = localStorage.getItem()
-
-
-
-
-
-
-
+    document.querySelector('#delete').addEventListener('click', ()=> localStorage.clear());
 
 </script>

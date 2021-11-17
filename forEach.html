@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="userList"></ul>
+</body>
+
+</html>
+
+<script>
+
+    const PRODUCTS = ['Laptop', 'Cellphone', 'Speaker', 'Desktop PC', 'Server', 'Mouse', 'Keyboard'];
+
+    PRODUCTS.forEach((element, index, array) => array[index] = `${element.toUpperCase()}.`);
+
+    console.log(PRODUCTS)
+
+
+    const userListDOM = document.querySelector('#userList');
+    PRODUCTS.forEach((element) => {
+        const liDom = document.createElement('li');
+        liDom.innerHTML = element
+        userListDOM.appendChild(liDom)
+    });
+
+
+</script>

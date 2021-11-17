@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let settings = {
+        userName: "loremIpsum",
+        password: "537148073",
+        isActive: false,
+        ip: "127.0.0.1",
+        serverName: "kodluyoruz.org"
+    }
+
+    // Object descructring & renaming
+    let { userName: user, password, isActive, ip: serverIP, serverName } = settings;
+    console.log(user, password, isActive, serverIP, serverName)
+    console.log(user)
+
+    //...rest spread operator
+    let { userName: userName2, password: password2, isActive: isActive2, ...newSettings } = settings;
+
+    console.log(userName2, password2, isActive2, newSettings)
+
+    // Destructing & copy
+    //let settings2 = settings;  // This does not
+
+    //This is WRONG!!!
+    // settings2.userName = "Değişen Bilgi"; 
+    // console.log("settings: ", settings)
+    // console.log("settings2: ", settings2)
+
+    //Correct way
+    let settings2 = { ...settings };
+    settings2.userName = "Değişen Bilgi";
+    console.log("settings: ", settings)
+    console.log("settings2: ", settings2)
+
+    let score = [100, 200, 300, 400];
+    let [score1, score2, ...otherScores] = score
+    console.log(score1, score2, otherScores)
+
+    // Same as copying an object
+    let copyOfScore = [...score];
+    console.log(copyOfScore)
+    console.log(copyOfScore[0] = 1)
+    console.log(score)
+
+    let person = { name: "Selin", city: "Ankara", favoriteColor: "aqua blue" };
+    let { name: foo } = person;
+    console.log(foo)
+</script>

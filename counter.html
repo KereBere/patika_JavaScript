@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <h1 id="counter"></h1>
+    <h1 id="counter">Counter with local storage and type conversion</h1>
     <div>
         <button id="increment">+</button>
         <button id="decrement">-</button>
@@ -17,7 +17,7 @@
 </body>
 </html>
 <script>
-    let counter = 0;
+    let counter = localStorage.getItem('counter') ? Number(localStorage.getItem('counter')) : 0;
     let counterDom = document.querySelector('#counter');
     const increment = document.querySelector('#increment');
     const decrement = document.querySelector('#decrement');
@@ -27,8 +27,14 @@
     increment.addEventListener('click', clickEvent);
     decrement.addEventListener('click', clickEvent);
 
+    let settedItem;
+
     function clickEvent() {
-        this.id == 'increment' ? counterDom.innerHTML = counter += 1 :  counterDom.innerHTML = counter -=1 
+
+        console.log(typeof(counter));
+        this.id == 'increment' ? counter += 1 :counter -=1 
+        counterDom.innerHTML = counter;
+        localStorage.setItem('counter', counter); 
     } 
 
 </script>

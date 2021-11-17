@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    function LetterCapitalize(str) {
+        let strArr = str.split(' ');
+        let resultArr = [];
+
+        for (let i = 0; i < strArr.length; i++) {
+            let item = strArr[i][0].toUpperCase() + strArr[i].slice(1);
+            resultArr.push(item);
+        }
+        console.log(resultArr)
+        // code goes here   
+
+    }
+
+
+    let kelime = "hello world"
+
+
+    LetterCapitalize(kelime);
+
+
+
+
+
+
+</script>
